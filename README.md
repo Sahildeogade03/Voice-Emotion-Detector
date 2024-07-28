@@ -10,7 +10,7 @@ This project aims to detect emotions through voice analysis. It leverages deep l
 - Real-time audio recording and analysis.
 - Color-coded results for easy interpretation.
 
-## Datasets Used
+## Datasets Used ---> https://www.kaggle.com/datasets/sdeogade/voice-emotion-classification
 - **CREMA-D**: The Crowd-sourced Emotional Multimodal Actors Dataset.
 - **TESS**: Toronto Emotional Speech Set.
 - **RAVDESS**: Ryerson Audio-Visual Database of Emotional Speech and Song.
