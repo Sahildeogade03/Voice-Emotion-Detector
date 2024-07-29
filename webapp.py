@@ -130,21 +130,13 @@ def process_recorded_audio():
 # Function to predict emotion and gender
 def predict_emotion_and_gender(audio_path):
     gender = detect_gender(audio_path)
-    gender_color = "blue" if gender == "Male" else "pink"
-    st.markdown(f'<p style="color:{gender_color}; font-size: 20px">Detected Gender: {gender}</p>', unsafe_allow_html=True)
-
-    features = extract_emotion_features(audio_path)
-    emotion = detect_emotion(features)
-    emotion_colors = {
-        'Angry': 'red',
-        'Disgust': 'green',
-        'Fear': 'purple',
-        'Happy': 'yellow',
-        'Neutral': 'gray',
-        'Sad': 'blue',
-        'Surprise': 'orange'
-    }
-    st.markdown(f'<p style="color:{emotion_colors[emotion]}; font-size: 20px">The detected emotion is: {emotion}</p>', unsafe_allow_html=True)
+    if gender == "Male":
+        st.error("Please upload a female voice.")
+    else:
+        st.success(f"Detected Gender: {gender}")
+        features = extract_emotion_features(audio_path)
+        emotion = detect_emotion(features)
+        st.success(f"The detected emotion is: {emotion}")
 
 # Streamlit app
 st.title("Emotion Detection through Voice")
